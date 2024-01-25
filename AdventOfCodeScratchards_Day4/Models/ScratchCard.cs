@@ -12,16 +12,18 @@ namespace AdventOfCodeScratchards_Day4.Models
         public int CardId { get; set; }
         public List<int> WinningNumbers { get; set; }
         public List<int> YourNumbers { get; set; }
-        public int Repetitions { get; set; }
+        public int AmountOfWinningNumbers { get; set; }
         public double Score { get; set; }
+
+        public int CardAmount { get; set; } = 1;
 
         public ScratchCard(int cardId, List<int> winningNumbers, List<int> yourNumbers)
         {
             CardId = cardId;
             WinningNumbers = winningNumbers;
             YourNumbers = yourNumbers;
-            Repetitions = CountRepetitions(winningNumbers, yourNumbers);
-            Score = CountScore(Repetitions);
+            AmountOfWinningNumbers = CountRepetitions(winningNumbers, yourNumbers);
+            Score = CountScore(AmountOfWinningNumbers);
         }
 
         private int CountRepetitions(List<int> winningNumbers, List<int> yourNumbers) 

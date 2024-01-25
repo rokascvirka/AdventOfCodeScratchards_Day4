@@ -14,8 +14,9 @@ namespace AdventOfCodeScratchards_Day4
             {
                 sum += item.Score;
             }
-
+            var scratchcards = Calculator.CountScrachCards(data);
             Console.WriteLine($"Sum: {sum}");
+            Console.WriteLine($"Scratchcards: {scratchcards}");
         }
     }
 }
